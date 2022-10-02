@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/docs/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/docs/" rel="alternate" type="text/html" /><updated>2022-09-30T11:38:06-04:00</updated><id>http://localhost:4000/docs/feed.xml</id><title type="html">Saima’s Case Study Portfolio</title><subtitle>This capstone project is for my Google Data Analytics Professional Certificate course. I will be analyzing a public dataset for a fictional bike sharing company provided by the course. I will be using sql for the analysis</subtitle><entry><title type="html">Case Study 1 - Bike Share Ride</title><link href="http://localhost:4000/docs/jekyll/update/2022/09/25/Bike-Share-Ride-Case-Study.html" rel="alternate" type="text/html" title="Case Study 1 - Bike Share Ride" /><published>2022-09-25T10:20:19-04:00</published><updated>2022-09-25T10:20:19-04:00</updated><id>http://localhost:4000/docs/jekyll/update/2022/09/25/Bike-Share-Ride-Case-Study</id><content type="html" xml:base="http://localhost:4000/docs/jekyll/update/2022/09/25/Bike-Share-Ride-Case-Study.html">&lt;p&gt;Followed following data analysis steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ask&lt;/li&gt;
+  &lt;li&gt;Prepare&lt;/li&gt;
+  &lt;li&gt;Process&lt;/li&gt;
+  &lt;li&gt;Analyze&lt;/li&gt;
+  &lt;li&gt;Share&lt;/li&gt;
+  &lt;li&gt;Act&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Scenario&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You are a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director
+of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore,
+your team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights,
+your team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives
+must approve your recommendations, so they must be backed up with compelling data insights and professional data
+visualizations.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ASK&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Three questions will guide the future marketing program:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;How do annual members and casual riders use Cyclistic bikes differently?&lt;/li&gt;
+  &lt;li&gt;Why would casual riders buy Cyclistic annual memberships?&lt;/li&gt;
+  &lt;li&gt;How can Cyclistic use digital media to influence casual riders to become members?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lily Moreno, The director of marketing and my manager has assigned the first question to answer: How do annual members and casual riders use Cyclistic bikes
+differently?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key tasks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Identify the business task
+    &lt;ul&gt;
+      &lt;li&gt;The main objective is to convert casual riders into annual members by exploring how differently they are using cyclists bikes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Consider key stakeholders
+    &lt;ul&gt;
+      &lt;li&gt;The director of marketing(Lily Moreno), Cyclistic Marketing Analytics team, Cyclistic Executive team&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Deliverable&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Find the differences between Casual Riders and Member Riders.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PREPARE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I will use Cyclistic’s historical trip data to analyze and identify trends.The data has been made available by
+Motivate International Inc. under this &lt;a href=&quot;https://www.divvybikes.com/data-license-agreement&quot;&gt;License&lt;/a&gt;. Datasets are available &lt;a href=&quot;https://divvy-tripdata.s3.amazonaws.com/index.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key tasks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download data and store it appropriately
+    &lt;ul&gt;
+      &lt;li&gt;Data has been downloaded and copies have been stored securely on Big query.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Identify how it’s organized.
+    &lt;ul&gt;
+      &lt;li&gt;The data is in .CSV (comma-separated values) format, and there are a total of 13 columns.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sort and filter the data.
+    &lt;ul&gt;
+      &lt;li&gt;I will use the last 12 months(August 2021-July 2022) of the data for the analysis as it is more current.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Determine the credibility of the data.
+    &lt;ul&gt;
+      &lt;li&gt;The data is credible and appropriate for this Case Study.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Deliverable&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Datasets provided &lt;a href=&quot;https://divvy-tripdata.s3.amazonaws.com/index.html&quot;&gt;here&lt;/a&gt; are used for this case study and loaded into Big Query. The data for each month was loaded in separate tables and then merged into a single table to present a unified yearly set of data for analysis.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202108`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202109`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_share_202110`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202111`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202112`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202201`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202202`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202203`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202204`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202205`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202206`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TIMESTAMP_DIFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ended_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SECOND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;STRING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FORMAT&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;DAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip_202207`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;PROCESS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cleaning and Preparing data for analysis&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key tasks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;I decided to use Big Query for cleaning and preparing the data.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Remove unwanted data.
+    &lt;ul&gt;
+      &lt;li&gt;While loading data into Big Query table, removed the header row.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/docs/assets/images/image1.png&quot; alt=&quot;CSV Skip Header&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add calculated fields &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;elapsed_minutes&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;weekday&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TIMESTAMP_DIFF(ended_at, started_at, SECOND) AS elapsed_minutes&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CAST(started_at AS STRING FORMAT &apos;DAY&apos;) AS weekday&lt;/code&gt;  &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Verify that rider type is valid.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;NA&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Deliverable&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The process of cleaning and preparing was documented above.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ANALYZE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that data is stored appropriately and prepared for analysis, it’s time to analyze it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key taks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Aggregate your data so it’s useful and accessible.&lt;/li&gt;
+  &lt;li&gt;Organize and format your data.&lt;/li&gt;
+  &lt;li&gt;Perform calculations.&lt;/li&gt;
+  &lt;li&gt;Identify trends and relationships.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Deliverable&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A summary of the analysis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analysis on ‘ride_length’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Following query has been used to calculate the average ride length of member and casual rider&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_of_ride_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;average_of_ride_length&lt;/th&gt;
+      &lt;th&gt;member_casual&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1752.6753728650715&lt;/td&gt;
+      &lt;td&gt;Casual&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;775.921758373272&lt;/td&gt;
+      &lt;td&gt;Member&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/docs/assets/images/image2.png&quot; alt=&quot;Result&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the Pie chart above, it can be clearly seen that Casual riders processing 69.30% and Members processing 30.70% of the dataset. So, in the last 12 months casual riders used ride share 40% more than the members.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analysis on ‘ride_length’ of member and casual rider on day of week&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Following query has been used for it&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_of_ride_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;day_of_week&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;day_of_week&lt;/th&gt;
+      &lt;th&gt;casual&lt;/th&gt;
+      &lt;th&gt;member&lt;/th&gt;
+      &lt;th&gt;Grand Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FRIDAY&lt;/td&gt;
+      &lt;td&gt;1644.382848&lt;/td&gt;
+      &lt;td&gt;756.3438737&lt;/td&gt;
+      &lt;td&gt;2400.726722&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MONDAY&lt;/td&gt;
+      &lt;td&gt;1783.274161&lt;/td&gt;
+      &lt;td&gt;754.0412348&lt;/td&gt;
+      &lt;td&gt;2537.315396&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SATURDAY&lt;/td&gt;
+      &lt;td&gt;1910.052093&lt;/td&gt;
+      &lt;td&gt;868.4415268&lt;/td&gt;
+      &lt;td&gt;2778.49362&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SUNDAY&lt;/td&gt;
+      &lt;td&gt;2037.828046&lt;/td&gt;
+      &lt;td&gt;877.6696573&lt;/td&gt;
+      &lt;td&gt;2915.497703&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;THURSDAY&lt;/td&gt;
+      &lt;td&gt;1571.759406&lt;/td&gt;
+      &lt;td&gt;744.3787668&lt;/td&gt;
+      &lt;td&gt;2316.138173&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TUESDAY&lt;/td&gt;
+      &lt;td&gt;1526.945871&lt;/td&gt;
+      &lt;td&gt;728.7309161&lt;/td&gt;
+      &lt;td&gt;2255.676787&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WEDNESDAY&lt;/td&gt;
+      &lt;td&gt;1500.088352&lt;/td&gt;
+      &lt;td&gt;730.3327861&lt;/td&gt;
+      &lt;td&gt;2230.421138&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/docs/assets/images/image3.png&quot; alt=&quot;Result&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above Bar Graph we can see that member’s average ride length is consistent throughout the week but going down on weekends but for the Casual riders it is less on weekdays and going up on weekends which is indicating that members are using bike share for commuting to fixed distances like work or school and Casual riders are using for leisure.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analysis on number of trips and avg ride length on day of the week&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Following query has been used for it&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_of_ride_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;day_of_week&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ride_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_of_trips&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WEEKDAY&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;SUM of number_of_trips&lt;/th&gt;
+      &lt;th&gt;member_casual&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;day_of_week&lt;/th&gt;
+      &lt;th&gt;casual&lt;/th&gt;
+      &lt;th&gt;member&lt;/th&gt;
+      &lt;th&gt;Grand Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FRIDAY&lt;/td&gt;
+      &lt;td&gt;347642&lt;/td&gt;
+      &lt;td&gt;466680&lt;/td&gt;
+      &lt;td&gt;814322&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MONDAY&lt;/td&gt;
+      &lt;td&gt;299656&lt;/td&gt;
+      &lt;td&gt;472392&lt;/td&gt;
+      &lt;td&gt;772048&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SATURDAY&lt;/td&gt;
+      &lt;td&gt;527575&lt;/td&gt;
+      &lt;td&gt;453490&lt;/td&gt;
+      &lt;td&gt;981065&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SUNDAY&lt;/td&gt;
+      &lt;td&gt;475626&lt;/td&gt;
+      &lt;td&gt;417978&lt;/td&gt;
+      &lt;td&gt;893604&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;THURSDAY&lt;/td&gt;
+      &lt;td&gt;316118&lt;/td&gt;
+      &lt;td&gt;522662&lt;/td&gt;
+      &lt;td&gt;838780&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TUESDAY&lt;/td&gt;
+      &lt;td&gt;273826&lt;/td&gt;
+      &lt;td&gt;523387&lt;/td&gt;
+      &lt;td&gt;797213&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WEDNESDAY&lt;/td&gt;
+      &lt;td&gt;281783&lt;/td&gt;
+      &lt;td&gt;522648&lt;/td&gt;
+      &lt;td&gt;804431&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Grand Total&lt;/td&gt;
+      &lt;td&gt;2522226&lt;/td&gt;
+      &lt;td&gt;3379237&lt;/td&gt;
+      &lt;td&gt;5901463&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/docs/assets/images/image4.png&quot; alt=&quot;Result&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above Bar Graph we can see that member’s average total ride is consistent throughout the week but going down on weekends but for the Casual riders it is less on weekdays and going up on weekends which is indicating that members are using bike share for commuting to fixed distances like work or school and Casual riders are using for leisure.&lt;/p&gt;
+
+&lt;p&gt;The above graph also shows that even though the average ride length of casual riders is higher than the members, their number of rides are still lower than the member’s which means there’s more members than the casual riders.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analysis on average ride length of member and casual rider in all 4 seasons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Following query has been used for it&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_of_ride_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;MONTH&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;-- ,WEEKDAY as day_of_week,count(ride_id) as number_of_trips&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;month&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;avg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_of_ride_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;MARCH&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;APRIL&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;MAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;SPRING&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;JUNE&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;JULY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;AUGUST&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;SUMMER&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;SEPTEMBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;OCTOBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;NOVEMBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;FALL&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;DECEMBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;JANUARY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;FEBRUARY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;WINTER&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;rest of the year&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;END&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;season&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;elapsed_minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started_at&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;MONTH&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;-- ,WEEKDAY as day_of_week,count(ride_id) as number_of_trips&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`my-project-1988-351517.bike_share_data.bike_trip`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;member_casual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;MARCH&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;APRIL&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;MAY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;SPRING&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;JUNE&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;JULY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;AUGUST&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;SUMMER&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;SEPTEMBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;OCTOBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;NOVEMBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;FALL&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;DECEMBER&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;JANUARY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;FEBRUARY&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;WINTER&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;rest of the year&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;END&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;SUM of average_of_ride_length&lt;/th&gt;
+      &lt;th&gt;member_casual&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;season&lt;/th&gt;
+      &lt;th&gt;casual&lt;/th&gt;
+      &lt;th&gt;member&lt;/th&gt;
+      &lt;th&gt;Grand Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FALL&lt;/td&gt;
+      &lt;td&gt;1645.68049&lt;/td&gt;
+      &lt;td&gt;760.7448901&lt;/td&gt;
+      &lt;td&gt;2406.42538&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SPRING&lt;/td&gt;
+      &lt;td&gt;1850.78762&lt;/td&gt;
+      &lt;td&gt;746.6216489&lt;/td&gt;
+      &lt;td&gt;2597.409269&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SUMMER&lt;/td&gt;
+      &lt;td&gt;1798.985904&lt;/td&gt;
+      &lt;td&gt;836.0944374&lt;/td&gt;
+      &lt;td&gt;2635.080341&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WINTER&lt;/td&gt;
+      &lt;td&gt;1517.05427&lt;/td&gt;
+      &lt;td&gt;680.6160926&lt;/td&gt;
+      &lt;td&gt;2197.670363&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Grand Total&lt;/td&gt;
+      &lt;td&gt;6812.508284&lt;/td&gt;
+      &lt;td&gt;3024.077069&lt;/td&gt;
+      &lt;td&gt;9836.585353&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/docs/assets/images/image5.png&quot; alt=&quot;Result&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the Bar graph above we can see that bike share usage (both for members and casual riders) is highest in summers and lowest in winters and almost same in falls and spring.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SHARE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This phase will be done by presentation&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key tasks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Determine the best way to share your findings.&lt;/li&gt;
+  &lt;li&gt;Create effective data visualizations.&lt;/li&gt;
+  &lt;li&gt;Present your findings.&lt;/li&gt;
+  &lt;li&gt;Ensure your work is accessible.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Deliverable&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Supporting visualizations and key findings.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Important Conclusions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Casual riders holds the biggest proportion of the total rides, 40% more than the members.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Throughout all the 12 months casual riders are more than the members.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Casual riders are using bike share more on weekends.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is an indication that members use bikes for commuting to work but Casual riders are using for other purposes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ACT&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This phase will be done by the Cyclistic’s executive team, Director of Marketing (Lily Moreno), Marketing Analytics team on the basis of my analysis. (Data-driven decision making)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Deliverable&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your top three recommendations based on your analysis&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Marketing campaigns targeting casual riders showing how membership can be cost effective for them .&lt;/li&gt;
+  &lt;li&gt;sending coupons via emails and mails especially for winters as usage is lowest during this season.&lt;/li&gt;
+  &lt;li&gt;offering some perks to members on using bikes on weekends.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;To Be Removed&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead an*d edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">Followed following data analysis steps:</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/docs/jekyll/update/2022/09/05/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-09-05T20:20:19-04:00</published><updated>2022-09-05T20:20:19-04:00</updated><id>http://localhost:4000/docs/jekyll/update/2022/09/05/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/docs/jekyll/update/2022/09/05/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
