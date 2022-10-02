@@ -122,7 +122,7 @@ Cleaning and Preparing data for analysis
 2. Remove unwanted data.
    * While loading data into Big Query table, removed the header row.
 
-   ![CSV Skip Header](/docs/assets/images/image1.png){:class="img-responsive"}
+   ![CSV Skip Header](/assets/images/image1.png){:class="img-responsive"}
 3. Add calculated fields `elapsed_minutes` and `weekday`.
    * `TIMESTAMP_DIFF(ended_at, started_at, SECOND) AS elapsed_minutes`
    * `CAST(started_at AS STRING FORMAT 'DAY') AS weekday`    
@@ -175,7 +175,7 @@ member_casual
 | 775.921758373272 | Member |
 
 
-![Result](/docs/assets/images/image2.png){:class="img-responsive"}
+![Result](/assets/images/image2.png){:class="img-responsive"}
 
 From the Pie chart above, it can be clearly seen that Casual riders processing 69.30% and Members processing 30.70% of the dataset. So, in the last 12 months casual riders used ride share 40% more than the members.
 
@@ -203,7 +203,7 @@ member_casual,WEEKDAY
 | TUESDAY	| 1526.945871	| 728.7309161	| 2255.676787|
 | WEDNESDAY	| 1500.088352	| 730.3327861	| 2230.421138|
 
-![Result](/docs/assets/images/image3.png){:class="img-responsive"}
+![Result](/assets/images/image3.png){:class="img-responsive"}
 
 In the above Bar Graph we can see that member's average ride length is consistent throughout the week but going down on weekends but for the Casual riders it is less on weekdays and going up on weekends which is indicating that members are using bike share for commuting to fixed distances like work or school and Casual riders are using for leisure.
 
@@ -235,7 +235,7 @@ member_casual,WEEKDAY
 | Grand Total	| 2522226	| 3379237	| 5901463|
 
 
-![Result](/docs/assets/images/image4.png){:class="img-responsive"}
+![Result](/assets/images/image4.png){:class="img-responsive"}
 
 
 In the above Bar Graph we can see that member's average total ride is consistent throughout the week but going down on weekends but for the Casual riders it is less on weekdays and going up on weekends which is indicating that members are using bike share for commuting to fixed distances like work or school and Casual riders are using for leisure. 
@@ -293,7 +293,7 @@ END
 | WINTER	| 1517.05427	| 680.6160926	| 2197.670363|
 | Grand Total	| 6812.508284	| 3024.077069	| 9836.585353|
 
-![Result](/docs/assets/images/image5.png){:class="img-responsive"}
+![Result](/assets/images/image5.png){:class="img-responsive"}
 
 From the Bar graph above we can see that bike share usage (both for members and casual riders) is highest in summers and lowest in winters and almost same in falls and spring.
 
