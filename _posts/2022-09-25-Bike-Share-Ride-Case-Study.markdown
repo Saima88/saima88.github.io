@@ -4,6 +4,10 @@ title:  "Case Study 1 - Bike Share Ride"
 date:   2022-09-25 10:20:19 -0400
 categories: jekyll update
 ---
+This capstone project is for my Google Data Analytics Professional Certificate course.
+I will be analyzing a public dataset for a fictional bike sharing company provided by the course.
+I will be using sql for the analysis
+
 Followed following data analysis steps:
 
 * Ask

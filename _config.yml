@@ -21,11 +21,7 @@
 title: Saima's Case Study Portfolio
 email: saima.arafat21@gmail.com
 description: >- 
-  This capstone project is for my Google Data Analytics Professional Certificate course.
-  I will be analyzing a public dataset for a fictional bike sharing company provided by the course.
-  I will be using sql for the analysis
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+  This is my personal GitHub page to document my case studies.
 # twitter_username: jekyllrb
 github_username:  saima88
 
